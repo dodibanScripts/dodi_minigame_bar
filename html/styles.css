@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html, body {
+    overflow: hidden; /* Remove a barra de rolagem */
+    height: 100%; /* Garante que o body ocupe 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #33333300;
+    font-family: 'Roboto', sans-serif; /* Define a fonte para a página */
+}
+
+.background-container {
+    position: relative;
+    width: 540px; /* Largura um pouco maior para acomodar a progress-container */
+    height: 150px; /* Altura um pouco maior para acomodar a progress-container */
+    background-image: url('bg.png'); /* Adicione o caminho para sua imagem aqui */
+    background-size: contain; /* Faz com que a imagem cubra todo o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+    background-repeat: no-repeat; /* Não repete a imagem de fundo */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 85vh;
+}
+
+.progress-container {
+    position: relative;
+    width: 480px;
+    height: 17px;
+    background-color: #000000b6;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ffffff2c; /* Adiciona um contorno branco de 2px */
+}
+
+.progress-bar {
+    position: absolute;
+    width: 15%; /* Largura reduzida da barra de progresso */
+    height: 100%;
+    background-color: #919191;
+    animation: progressAnimation 3s linear infinite;
+    border-radius: 5px;
+}
+
+
+
+@keyframes progressAnimation {
+    from { left: 0%; } /* Ajustar para que comece dentro do contêiner */
+    to { left: 100%; } /* Ajustar para que termine dentro do contêiner */
+}
+
+.target-zone {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.result {
+    position: absolute;
+    top: 60%; /* Ajusta a posição vertical da mensagem */
+    color: #ecececa8;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 24vh;
+}
